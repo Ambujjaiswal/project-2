@@ -1,0 +1,121 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    /* – What is Min Height 100vh in CSS? Min height 100vh means the element should occupy the web browser viewport height. This is always 100 percent of the web browser's viewport height */
+    min-height: 100vh;
+    /* if you specify width:100%, the element's total width will be 100% of its containing block plus any horizontal margin, padding and border. */
+    width: 100%;
+    /* padding: 10px; That declaration means that the padding box should extend 10px in all four directions—left, right, up, and down */
+    padding: 10px;
+    /* backgroundcolor: linear-gradient(135deg,#153677,#4e085f); this is wrong
+     */
+     background: linear-gradient(135deg,#153677,#4e085f);
+}
+.to-doList{
+   
+    width: 100%;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    border: black;
+    max-width: 540px;
+    background: bisque;
+    /* margin is the property jiske karad wo centre mai aaya  */
+    /* basically answer of how to centre a div  */
+    margin: 100px auto 20px;
+}
+.to-doList h2{
+    display: flex;
+    align-items: center;
+}
+.to-doList h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    /* By using display flex in parent element, child elements automatically align like column or row with auto width and auto height. */
+    display: flex;
+    align-items: center; 
+    /* kisi bhi flex item which our case is the row 
+    usme agar tu justify content lgayega toh uske elements 
+    which are input and button will be positioned at the start 
+    and end of the row and other elements will be distributed in even spaces */
+    justify-content: space-between;
+    padding-left:20px;
+    margin-top:20px;
+    background: #edeef0;
+    border-radius: 30px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+button{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color:#fff;
+    padding: 16px 50px;
+    cursor: pointer;
+    border-radius: 40px;
+    background: #ff5945;
+}
+#list-container{
+    margin-top: 20px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px; 
+/* The user-select property specifies whether the text of an element can be selected. In web browsers, if you double-click on some text it will be selected/highlighted. This property can be used to prevent this. */
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+/* The CSS selector ul::before is used to style the content before the start of an unordered list (<ul>) element. The ::before pseudo-element allows you to insert content before the content of an element.
+ */
+ ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+ }
+ ul li.checked{
+    color: #555;
+    text-decoration:line-through;
+ }
+ ul li.checked::before{
+    background-image: url(images/checked.png);
+ }
+ /* ye cross button ko css dene k liye */
+ ul li span{
+    position:absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    /* isse circle bn jayega  */
+    border-radius: 50%;
+ }
+ ul li span:hover{
+    background: #edeef0;
+ } 
+ 
+
